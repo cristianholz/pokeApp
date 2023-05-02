@@ -1,0 +1,394 @@
+.card {
+  display: block;
+  overflow: hidden;
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+
+  .sprite {
+    &__image {
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .sprite {
+      &__image {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  .id,
+  .sprite,
+  .infos {
+    border: 1px solid var(--white);
+  }
+
+  .id {
+    width: 100%;
+    display: block;
+    padding: 4px 8px 0;
+    border-bottom: unset;
+    border-radius: 8px 8px 0 0;
+
+    font-size: 12px;
+    text-align: right;
+    line-height: 16px;
+    color: var(--white);
+  }
+
+  .sprite {
+    display: flex;
+    justify-content: center;
+    border-top: unset;
+    border-bottom: unset;
+    padding-bottom: 20px;
+  }
+
+  .infos {
+    padding: 8px;
+    border-top: unset;
+    border-radius: 0 0 8px 8px;
+    background-color: var(--white);
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--white);
+    text-transform: uppercase;
+    width: 100%;
+
+    h2 {
+      color: var(--white);
+      line-height: 22px;
+      text-transform: uppercase;
+      font-weight: 700;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      white-space: pre-wrap;
+    }
+  }
+
+  .stats {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+
+    @media only screen and (max-width: 1024px) {
+      flex-wrap: wrap;
+      padding: 10px 5px;
+    }
+
+    &__title {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      display: block;
+      color: var(--white);
+    }
+
+    li {
+      font-size: 12px;
+      padding: 0;
+
+      span {
+        color: var(--white);
+      }
+
+      @media only screen and (max-width: 1024px) {
+        flex-direction: initial;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  :global(.normal) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--normal);
+    }
+
+    .id {
+      color: var(--normal);
+    }
+
+    .infos {
+      background-color: var(--normal);
+    }
+  }
+
+  :global(.fighting) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--fighting);
+    }
+
+    .id {
+      color: var(--fighting);
+    }
+
+    .infos {
+      background-color: var(--fighting);
+    }
+  }
+
+  :global(.flying) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--flying);
+    }
+
+    .id {
+      color: var(--flying);
+    }
+
+    .infos {
+      background-color: var(--flying);
+    }
+  }
+
+  :global(.poison) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--poison);
+    }
+
+    .id {
+      color: var(--poison);
+    }
+
+    .infos {
+      background-color: var(--poison);
+    }
+  }
+
+  :global(.ground) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--ground);
+    }
+
+    .id {
+      color: var(--ground);
+    }
+
+    .infos {
+      background-color: var(--ground);
+    }
+  }
+
+  :global(.rock) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--rock);
+    }
+
+    .id {
+      color: var(--rock);
+    }
+
+    .infos {
+      background-color: var(--rock);
+    }
+  }
+
+  :global(.bug) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--bug);
+    }
+
+    .id {
+      color: var(--bug);
+    }
+
+    .infos {
+      background-color: var(--bug);
+    }
+  }
+
+  :global(.ghost) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--ghost);
+    }
+
+    .id {
+      color: var(--ghost);
+    }
+
+    .infos {
+      background-color: var(--ghost);
+    }
+  }
+
+  :global(.steel) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--steel);
+    }
+
+    .id {
+      color: var(--steel);
+    }
+
+    .infos {
+      background-color: var(--steel);
+    }
+  }
+
+  :global(.fire) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--fire);
+    }
+
+    .id {
+      color: var(--fire);
+    }
+
+    .infos {
+      background-color: var(--fire);
+    }
+  }
+
+  :global(.water) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--water);
+    }
+
+    .id {
+      color: var(--water);
+    }
+
+    .infos {
+      background-color: var(--water);
+    }
+  }
+
+  :global(.grass) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--grass);
+    }
+
+    .id {
+      color: var(--grass);
+    }
+
+    .infos {
+      background-color: var(--grass);
+    }
+  }
+
+  :global(.electric) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--electric);
+    }
+
+    .id {
+      color: var(--electric);
+    }
+
+    .infos {
+      background-color: var(--electric);
+    }
+  }
+
+  :global(.psychic) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--psychic);
+    }
+
+    .id {
+      color: var(--psychic);
+    }
+
+    .infos {
+      background-color: var(--psychic);
+    }
+  }
+
+  :global(.ice) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--ice);
+    }
+
+    .id {
+      color: var(--ice);
+    }
+
+    .infos {
+      background-color: var(--ice);
+    }
+  }
+
+  :global(.dragon) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--dragon);
+    }
+
+    .id {
+      color: var(--dragon);
+    }
+
+    .infos {
+      background-color: var(--dragon);
+    }
+  }
+
+  :global(.dark) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--dark);
+    }
+
+    .id {
+      color: var(--dark);
+    }
+
+    .infos {
+      background-color: var(--dark);
+    }
+  }
+
+  :global(.fairy) {
+    .id,
+    .sprite,
+    .infos {
+      border-color: var(--fairy);
+    }
+
+    .id {
+      color: var(--fairy);
+    }
+
+    .infos {
+      background-color: var(--fairy);
+    }
+  }
+}

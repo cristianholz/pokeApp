@@ -1,0 +1,19 @@
+{
+  "testPathIgnorePatterns": ["/node_modules/", "/.next/"],
+  "setupFilesAfterEnv": ["<rootDir>/src/tests/setupTests.ts"],
+  "transform": {
+    "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest"
+  },
+  "moduleNameMapper": {
+    "\\.(scss|css|sass|tsx)$": "identity-obj-proxy",
+    "^@/components(.*)$": "<rootDir>/src/components$1",
+    "^@/hooks(.*)$": "<rootDir>/src/hooks$1",
+    "^@/pages(.*)$": "<rootDir>/src/pages$1",
+    "^@/helpers(.*)$": "<rootDir>/src/helpers$1",
+    "^@/strings(.*)$": "<rootDir>/src/strings$1"
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "testEnvironment": "jsdom",
+  "verbose": true,
+  "clearMocks": true
+}

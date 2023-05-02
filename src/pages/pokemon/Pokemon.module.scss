@@ -1,0 +1,478 @@
+.main {
+  position: relative;
+  padding: 0 4px 4px;
+
+  display: flex;
+  flex-direction: column;
+  max-height: 350px;
+
+  .header {
+    padding: 24px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      align-items: center;
+
+      .goBack {
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.6;
+        }
+
+        svg {
+          width: 24px;
+          height: 32px;
+          fill: var(--white);
+          margin-right: 16px;
+        }
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        color: var(--white);
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    border-radius: 8px;
+    padding: 0 20px 44px;
+    background-color: var(--white);
+    max-height: 500px;
+    max-width: 850px;
+    margin: 100px auto;
+    width: 100%;
+
+    .image {
+      &__wrapper {
+        margin-top: -100px;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        > span {
+          display: block !important;
+          margin: 0 auto !important;
+        }
+      }
+    }
+
+    .types {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 20px 0;
+
+      li {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        color: var(--white);
+        text-transform: capitalize;
+
+        padding: 2px 8px;
+        border-radius: 10px;
+
+        + li {
+          margin-left: 16px;
+        }
+      }
+    }
+
+    .contentTitle {
+      display: block;
+      margin-bottom: 16px;
+
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    .stats {
+      max-width: 312px;
+      margin: 16px auto 0;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        > span {
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 16px;
+          text-align: right;
+          text-transform: uppercase;
+
+          display: block;
+          min-width: 45px;
+          margin-right: 12px;
+          padding-right: 12px;
+          border-right: 1px solid var(--light-gray);
+        }
+
+        p {
+          flex: 1;
+          display: flex;
+          align-items: center;
+
+          font-size: 12px;
+          line-height: 16px;
+
+          .value {
+            min-width: 27px;
+          }
+
+          .bar {
+            width: 100%;
+            height: 4px;
+            overflow: hidden;
+            margin-left: 8px;
+            position: relative;
+            border-radius: 4px;
+
+            .progress {
+              height: 100%;
+              display: block;
+
+              left: 0;
+              position: absolute;
+            }
+
+            &::after {
+              content: '';
+
+              width: 100%;
+              height: 100%;
+              display: block;
+
+              left: 0;
+              opacity: 0.2;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 769px) {
+    &::before {
+      right: 64px;
+    }
+
+    .content {
+      .imageWrapper a {
+        width: 48px;
+
+        svg {
+          width: 40px;
+        }
+      }
+
+      .types {
+        margin-bottom: 24px;
+
+        li {
+          font-size: 12px;
+        }
+      }
+
+      .contentTitle {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 12px;
+      }
+
+      .stats {
+        max-width: 500px;
+
+        li {
+          > span {
+            font-size: 14px;
+            min-width: 50px;
+          }
+
+          p {
+            font-size: 14px;
+
+            .bar {
+              height: 8px;
+              border-radius: 8px;
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper:global(.normal),
+.content .types li:global(.normal) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--normal);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--normal);
+  }
+}
+
+.wrapper:global(.fighting),
+.content .types li:global(.fighting) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--fighting);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--fighting);
+  }
+}
+
+.wrapper:global(.flying),
+.content .types li:global(.flying) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--flying);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--flying);
+  }
+}
+
+.wrapper:global(.poison),
+.content .types li:global(.poison) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--poison);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--poison);
+  }
+}
+
+.wrapper:global(.ground),
+.content .types li:global(.ground) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--ground);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--ground);
+  }
+}
+
+.wrapper:global(.rock),
+.content .types li:global(.rock) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--rock);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--rock);
+  }
+}
+
+.wrapper:global(.bug),
+.content .types li:global(.bug) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--bug);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--bug);
+  }
+}
+
+.wrapper:global(.ghost),
+.content .types li:global(.ghost) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--ghost);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--ghost);
+  }
+}
+
+.wrapper:global(.steel),
+.content .types li:global(.steel) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--steel);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--steel);
+  }
+}
+
+.wrapper:global(.fire),
+.content .types li:global(.fire) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--fire);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--fire);
+  }
+}
+
+.wrapper:global(.water),
+.content .types li:global(.water) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--water);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--water);
+  }
+}
+
+.wrapper:global(.grass),
+.content .types li:global(.grass) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--grass);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--grass);
+  }
+}
+
+.wrapper:global(.electric),
+.content .types li:global(.electric) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--electric);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--electric);
+  }
+}
+
+.wrapper:global(.psychic),
+.content .types li:global(.psychic) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--psychic);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--psychic);
+  }
+}
+
+.wrapper:global(.ice),
+.content .types li:global(.ice) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--ice);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--ice);
+  }
+}
+
+.wrapper:global(.dragon),
+.content .types li:global(.dragon) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--dragon);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--dragon);
+  }
+}
+
+.wrapper:global(.dark),
+.content .types li:global(.dark) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--dark);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--dark);
+  }
+}
+
+.wrapper:global(.fairy),
+.content .types li:global(.fairy) {
+  &,
+  .stats li p .bar::after,
+  .stats li p .bar .progress {
+    background-color: var(--fairy);
+  }
+
+  .contentTitle,
+  .stats li > span {
+    color: var(--fairy);
+  }
+}
